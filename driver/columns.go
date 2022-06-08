@@ -1,9 +1,10 @@
 package driver
 
 import (
-	"cloud.google.com/go/bigquery"
 	"database/sql/driver"
-	"gorm.io/driver/bigquery/adaptor"
+
+	"cloud.google.com/go/bigquery"
+	"github.com/lmquang/bigquery/adaptor"
 )
 
 type bigQuerySchema interface {
