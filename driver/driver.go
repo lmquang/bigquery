@@ -1,11 +1,12 @@
 package driver
 
 import (
-	"cloud.google.com/go/bigquery"
 	"context"
 	"database/sql/driver"
 	"fmt"
 	"strings"
+
+	"cloud.google.com/go/bigquery"
 )
 
 type bigQueryDriver struct {
@@ -48,7 +49,6 @@ func configFromUri(uri string) (*bigQueryConfig, error) {
 		return nil, fmt.Errorf("invalid prefix, expected bigquery:// got: %s", uri)
 	}
 
-	uri = strings.ToLower(uri)
 	path := strings.TrimPrefix(uri, "bigquery://")
 	fields := strings.Split(path, "/")
 
